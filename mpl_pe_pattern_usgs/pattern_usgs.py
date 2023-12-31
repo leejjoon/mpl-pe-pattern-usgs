@@ -168,7 +168,7 @@ class PatternUSGS:
         fn_json = pkg_resources.resource_filename('mpl_pe_pattern_usgs',
                                                   'pattern_usgs.json')
         fn_npz = pkg_resources.resource_filename('mpl_pe_pattern_usgs',
-                                                 'pattern_usgs_vertcies_codes.npz')
+                                                 'pattern_usgs_vertices_codes.npz')
 
         self._j = json.load(open(fn_json))
         self._vc = np.load(fn_npz)
