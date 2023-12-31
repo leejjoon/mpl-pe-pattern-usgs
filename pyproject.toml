@@ -1,0 +1,11 @@
+[tool.black]
+skip-string-normalization = true
+
+[tool.pytest.ini_options]
+testpaths = [
+    "mpl_pe_pattern_usgs/tests"
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
