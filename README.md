@@ -7,3 +7,8 @@ originally from
 processed with [picosvg](https://github.com/googlefonts/picosvg) and converted
 to matplotlib's paths.
 
+https://mpl-pe-pattern-usgs.readthedocs.io/
+
+
+![usgs_example](https://mpl-pe-pattern-usgs.readthedocs.io/en/latest/_images/sphx_glr_demo_001.png)
+
