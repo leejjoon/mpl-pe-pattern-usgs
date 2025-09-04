@@ -1,4 +1,4 @@
-import pkg_resources
+from importlib import resources
 
 import numpy as np
 import json
@@ -164,14 +164,14 @@ class PatternBox(Artist):
 
 class PatternUSGS:
     def __init__(self):
+        ref_json = resources.files('mpl_pe_pattern_usgs').joinpath('pattern_usgs.json')
+        ref_npz = resources.files('mpl_pe_pattern_usgs').joinpath('pattern_usgs_vertices_codes.npz')
 
-        fn_json = pkg_resources.resource_filename('mpl_pe_pattern_usgs',
-                                                  'pattern_usgs.json')
-        fn_npz = pkg_resources.resource_filename('mpl_pe_pattern_usgs',
-                                                 'pattern_usgs_vertices_codes.npz')
+        with resources.as_file(ref_json) as fn_json:
+            self._j = json.load(open(fn_json))
 
-        self._j = json.load(open(fn_json))
-        self._vc = np.load(fn_npz)
+        with resources.as_file(ref_npz) as fn_npz:
+            self._vc = np.load(fn_npz)
 
         roots = {}
         for j1 in self._j:
